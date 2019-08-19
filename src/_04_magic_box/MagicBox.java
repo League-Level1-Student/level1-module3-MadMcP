@@ -54,6 +54,7 @@ public class MagicBox extends JPanel implements Runnable, MouseListener {
 		frame.pack();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
+		frame.addMouseListener(this);
 	}
 
 	private void loadBackgroundImage() throws Exception {
@@ -73,7 +74,16 @@ public class MagicBox extends JPanel implements Runnable, MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+		System.out.println(e.getX() + " " + e.getY());
+		if (e.getX() == 541 && e.getY() == 362) {
+			MediaPalace.speak("Hooray! You found Secrect #1!");
+		}
+		if (e.getX() == 335 && e.getY() == 169) {
+			MediaPalace.speak("Hooray! You found Secrect #2!");
+		}
+		if (e.getX() == 343 && e.getY() == 657) {
+			MediaPalace.speak("Hooray! You found Secrect #3!");
+		}
 	}
 
 	@Override

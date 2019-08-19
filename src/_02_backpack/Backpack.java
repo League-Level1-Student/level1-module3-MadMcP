@@ -9,7 +9,7 @@ public class Backpack
 	private Ruler ruler;
 	private Textbook textbook;
 
-	private void packAndCheck()
+	void packAndCheck()
 	{
 		// Your mission is to go to school.
 		// 1. First you need to put all your supplies into your backpack - use the putInBackpack(...) methods
