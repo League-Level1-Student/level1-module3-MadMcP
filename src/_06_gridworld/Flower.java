@@ -1,5 +1,18 @@
 package _06_gridworld;
 
-public class Flower {
+import java.awt.Color;
 
+public class Flower {
+	
+	public Flower() {
+		
+	}
+	
+	public void flower (Color initialColor) {
+		
+	}
+	
+	public void setColor(Color newColor) {
+		
+	}
 }
