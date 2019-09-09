@@ -32,18 +32,22 @@ int x2 = 500;
 int y2 = 450;
 int upperPipeHeight = (int) random(100, 275);
 int lowerY = upperPipeHeight + 150;
+int score = 0;
+String word = "Start";
 
 void setup() {
   size(350, 500);
 }
 
 void draw() {
- // background(0, 0, 0)
-  //fill(106, 196, 77)
+  //background(0, 0, 0);
+  //fill(106, 196, 77);
+  //text("Press Space To " +word, 105, 450);
   background(r, g, b);
   fill(106, 196, 77);
-  text(text, 115, 250);
-  textSize(30);
+  text("Score: " +score, 270, 15);
+  textSize(15);
+  text(text, 105, 250);
   fill(r2, g2, b2);
   rect(0, 450, 350, 50);
   fill(r3, g3, b3);
@@ -64,9 +68,6 @@ void draw() {
   y += vel;
   vel += grav;
   
-  if (mousePressed){
-
-  }
   fill(r4, g4, b4);
   rect(x2, lowerY, 50, 450);
   rect(x2, 0, 50, upperPipeHeight);
@@ -76,8 +77,13 @@ void draw() {
     upperPipeHeight = (int) random(100, 270);
     lowerY = upperPipeHeight + 150;
   }
+  boolean scoreIncreases = scoreIncreases();
+  if (scoreIncreases == true) {
+   score= score + 1; 
+  }
   boolean gameover = intersectsPipes() || intersectsGround();
   if (gameover == true) {
+   scoreIncreases = false;
    f = 0;
    r = 0;
    g = 0;
@@ -94,7 +100,9 @@ void draw() {
    r4 = 0;
    g4 = 0;
    b4 = 0;
-   text = "Gameover";
+   int finalScore = score;
+   text = "Gameover || Score: " +finalScore;
+   word = "Restart";
    
   }
 }
@@ -115,4 +123,13 @@ boolean intersectsGround() {
 }
 void mousePressed(){
        vel = -5; 
+}
+
+boolean scoreIncreases(){
+ if (x2 == x) {
+   return true;
+ }
+ else {
+   return false;
+ }
 }
