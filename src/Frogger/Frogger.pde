@@ -1,9 +1,23 @@
 //variables
   //int
   int frogX = 400;
-  int frogY = 550;
+  int frogY = 537;
+  int frogBody1 = 20;
+  int frogBody2 = 40;
+  int backFrogLeg1 = 10;
+  int backFrogLeg2 = 25;
+  int backFrogLeg3 = 10;
+  int backFrogLeg4 = 25;
+  int frontFrogLeg1 = 7;
+  int frontFrogLeg2 = 19;
+  int frontFrogLeg3 = 7;
+  int frontFrogLeg4 = 19;
   int cloudX = 750;
   int cloudY = 40;
+  int frogEye1X = 5;
+  int frogEye2X = 5;
+  int frogEye1Y = 15;
+  int frogEye2Y = 15;
   //String
 
 
@@ -93,15 +107,102 @@ void draw(){
   // Frog
   fill(58, 137, 47);
     // F back legs
-    ellipse(frogX - 12, frogY + 10, 10, 25);
-    ellipse(frogX + 12, frogY + 10, 10, 25);
+    ellipse(frogX - 12, frogY + 10, backFrogLeg1, backFrogLeg2);
+    ellipse(frogX + 12, frogY + 10, backFrogLeg3, backFrogLeg4);
     // F front legs
-    ellipse(frogX - 12, frogY - 10, 7, 19);
-    ellipse(frogX + 12, frogY - 10, 7, 19);
+    ellipse(frogX - 12, frogY - 10, frontFrogLeg1, frontFrogLeg2);
+    ellipse(frogX + 12, frogY - 10, frontFrogLeg3, frontFrogLeg4);
     // F body
-    ellipse(frogX, frogY, 20, 40);
+    ellipse(frogX, frogY, frogBody1, frogBody2);
     fill(250, 36, 13);
     // F eyes
-    ellipse(frogX - 5, frogY - 15, 7, 7);
-    ellipse(frogX + 5, frogY - 15, 7, 7);
+    ellipse(frogX - frogEye1X, frogY - frogEye1Y, 7, 7);
+    ellipse(frogX + frogEye2X, frogY - frogEye2Y, 7, 7);
+}
+
+void keyPressed(){
+    if(key == CODED){
+        if(frogY > 187){
+            if(keyCode == UP)
+            {
+                  //Frog Y position goes up
+                  frogY = frogY - 75;
+                  frogBody1 = 20;
+                  frogBody2 = 40;
+                  backFrogLeg1 = 10;
+                  backFrogLeg2 = 25;
+                  frontFrogLeg1 = 7;
+                  frontFrogLeg2 = 19;
+                  
+                  backFrogLeg1 = 10;
+backFrogLeg2 = 25;
+backFrogLeg3 = 10;
+backFrogLeg4 = 25;
+frontFrogLeg1 = 7;
+frontFrogLeg2 = 19;
+frontFrogLeg3 = 7;
+frontFrogLeg4 = 19;
+                  
+                  frogEye1X = 5;
+                  frogEye2X = 5;
+                  frogEye1Y = 15;
+                  frogEye2Y = 15;
+            }
+        }
+        if(frogY < 537) {
+            if(keyCode == DOWN)
+            {
+                  //Frog Y position goes down
+                  frogY = frogY + 75;
+                  frogBody1 = 20;
+                  frogBody2 = 40;
+                  backFrogLeg1 = 10;
+                  backFrogLeg2 = 25;
+                  frontFrogLeg1 = 7;
+                  frontFrogLeg2 = 19;
+                  frogEye1X = 5;
+                  frogEye2X = 5;
+                  frogEye1Y = -15;
+                  frogEye2Y = -15;
+            }
+        }
+        if(frogX < 800){
+            if(keyCode == RIGHT)
+            {
+                  //Frog X position goes right
+                  frogX = frogX + 50;
+                  frogBody1 = 40;
+                  frogBody2 = 20;
+                  backFrogLeg1 = 25;
+                  backFrogLeg2 = 10;
+                  frontFrogLeg1 = 19;
+                  frontFrogLeg2 = 7;
+                  frogEye1X = -10;
+                  frogEye2X = 10;
+                  frogEye1Y = 5;
+                  frogEye2Y = -5;
+            }
+        }
+        if(frogX > 0){
+            if(keyCode == LEFT)
+            {
+                  //Frog X position goes left
+                  frogX = frogX - 50;
+                  frogBody1 = 40;
+                  frogBody2 = 20;
+                  backFrogLeg1 = 25;
+                  backFrogLeg2 = 10;
+                  frontFrogLeg1 = 19;
+                  frontFrogLeg2 = 7;
+                  frogEye1X = 10;
+                  frogEye2X = -10;
+                  frogEye1Y = 5;
+                  frogEye2Y = -5;
+            }
+        }
+    }
+}
+
+void Car(){
+  
 }
