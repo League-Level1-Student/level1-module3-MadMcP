@@ -18,7 +18,31 @@
   int frogEye2X = 5;
   int frogEye1Y = 15;
   int frogEye2Y = 15;
-  //String
+  //Fill
+  int bgR = 69;
+  int bgB = 71;
+  int bgG = 80;
+  int swR = 180;
+  int swB = 174;
+  int swG = 173;
+  int sR = 26;
+  int sB = 113;
+  int sG = 232;
+  int cR = 250;
+  int cB = 250;
+  int cG = 250;
+  int fR = 58;
+  int fB = 137;
+  int fG = 47;
+  int feR = 250;
+  int feB = 36;
+  int feG = 13;
+  
+  //Car
+  Car carA = new Car(-100, 210, 100, -9);
+  Car carB = new Car(800, 285, 100, 6);
+  Car carC = new Car(-100, 360, 100, -7);
+  Car carD = new Car(800, 435, 100, 5);
 
 
 void setup(){
@@ -27,9 +51,9 @@ void setup(){
 
 void draw(){
   // Street
-  background(69, 71, 80);
+  background(bgR, bgB, bgG);
     // S sidewalk
-    fill(180, 174, 173);
+    fill(swR, swB, swG);
       // Ss Up
       rect(0, 500, 800, 100);
       // Ss Down
@@ -83,11 +107,11 @@ void draw(){
           line(725, 425, 775, 425);
           
   // Sky
-    fill(26, 113, 232);
+    fill(sR, sB, sG);
     // S Sky
     rect(0, 25, 800, 75);
     //S clouds
-    fill(250, 250, 250);
+    fill(cR, cB, cG);
     ellipse(cloudX, cloudY, 43, 23);
     ellipse(cloudX - 30, cloudY + 22, 45, 28);
     ellipse(cloudX + 25, cloudY + 35, 45, 25);
@@ -105,7 +129,7 @@ void draw(){
     textSize(15);
     
   // Frog
-  fill(58, 137, 47);
+  fill(fR, fB, fG);
     // F back legs
     ellipse(frogX - 12, frogY + 10, backFrogLeg1, backFrogLeg2);
     ellipse(frogX + 12, frogY + 10, backFrogLeg3, backFrogLeg4);
@@ -114,10 +138,113 @@ void draw(){
     ellipse(frogX + 12, frogY - 10, frontFrogLeg3, frontFrogLeg4);
     // F body
     ellipse(frogX, frogY, frogBody1, frogBody2);
-    fill(250, 36, 13);
+    fill(feR, feB, feG);
     // F eyes
     ellipse(frogX - frogEye1X, frogY - frogEye1Y, 7, 7);
     ellipse(frogX + frogEye2X, frogY - frogEye2Y, 7, 7);
+
+  //Car
+  carA.display();
+  carB.display();
+  carC.display();
+  carD.display();
+  
+  boolean carIntercepts1 = intersects(carA);
+  if (carIntercepts1 = false){
+    stroke(28, 56, 211);
+    bgR = 28;
+    bgB = 56;
+    bgG = 211;
+    swR = 28;
+    swB = 56;
+    swG = 211;
+    sR = 28;
+    sB = 56;
+    sG = 211;
+    cR = 28;
+    cB = 56;
+    cG = 211;
+    fR = 28;
+    fB = 56;
+    fG = 211;
+    feR = 28;
+    feB = 56;
+    feG = 211;
+    fill (0, 0, 0);
+    text("Gameover", 300, 400);
+  }
+  boolean carIntercepts2 = intersects(carB);
+  if (carIntercepts2 = false){
+    stroke(28, 56, 211);
+    bgR = 28;
+    bgB = 56;
+    bgG = 211;
+    swR = 28;
+    swB = 56;
+    swG = 211;
+    sR = 28;
+    sB = 56;
+    sG = 211;
+    cR = 28;
+    cB = 56;
+    cG = 211;
+    fR = 28;
+    fB = 56;
+    fG = 211;
+    feR = 28;
+    feB = 56;
+    feG = 211;
+    fill (0, 0, 0);
+    text("Gameover", 300, 400);
+  }
+  boolean carIntercepts3 = intersects(carC);
+  if (carIntercepts3 = false){
+    stroke(28, 56, 211);
+    bgR = 28;
+    bgB = 56;
+    bgG = 211;
+    swR = 28;
+    swB = 56;
+    swG = 211;
+    sR = 28;
+    sB = 56;
+    sG = 211;
+    cR = 28;
+    cB = 56;
+    cG = 211;
+    fR = 28;
+    fB = 56;
+    fG = 211;
+    feR = 28;
+    feB = 56;
+    feG = 211;
+    fill (0, 0, 0);
+    text("Gameover", 300, 400);
+  }
+  boolean carIntercepts4 = intersects(carD);
+  if (carIntercepts4 = false){
+    stroke(28, 56, 211);
+    bgR = 28;
+    bgB = 56;
+    bgG = 211;
+    swR = 28;
+    swB = 56;
+    swG = 211;
+    sR = 28;
+    sB = 56;
+    sG = 211;
+    cR = 28;
+    cB = 56;
+    cG = 211;
+    fR = 28;
+    fB = 56;
+    fG = 211;
+    feR = 28;
+    feB = 56;
+    feG = 211;
+    fill (0, 0, 0);
+    text("Gameover", 300, 400);
+  }
 }
 
 void keyPressed(){
@@ -129,19 +256,15 @@ void keyPressed(){
                   frogY = frogY - 75;
                   frogBody1 = 20;
                   frogBody2 = 40;
+
                   backFrogLeg1 = 10;
                   backFrogLeg2 = 25;
+                  backFrogLeg3 = 10;
+                  backFrogLeg4 = 25;
                   frontFrogLeg1 = 7;
                   frontFrogLeg2 = 19;
-                  
-                  backFrogLeg1 = 10;
-backFrogLeg2 = 25;
-backFrogLeg3 = 10;
-backFrogLeg4 = 25;
-frontFrogLeg1 = 7;
-frontFrogLeg2 = 19;
-frontFrogLeg3 = 7;
-frontFrogLeg4 = 19;
+                  frontFrogLeg3 = 7;
+                  frontFrogLeg4 = 19;
                   
                   frogEye1X = 5;
                   frogEye2X = 5;
@@ -156,10 +279,16 @@ frontFrogLeg4 = 19;
                   frogY = frogY + 75;
                   frogBody1 = 20;
                   frogBody2 = 40;
+                  
                   backFrogLeg1 = 10;
                   backFrogLeg2 = 25;
+                  backFrogLeg3 = 10;
+                  backFrogLeg4 = 25;
                   frontFrogLeg1 = 7;
                   frontFrogLeg2 = 19;
+                  frontFrogLeg3 = 7;
+                  frontFrogLeg4 = 19;
+                  
                   frogEye1X = 5;
                   frogEye2X = 5;
                   frogEye1Y = -15;
@@ -173,10 +302,16 @@ frontFrogLeg4 = 19;
                   frogX = frogX + 50;
                   frogBody1 = 40;
                   frogBody2 = 20;
+                  
                   backFrogLeg1 = 25;
                   backFrogLeg2 = 10;
-                  frontFrogLeg1 = 19;
-                  frontFrogLeg2 = 7;
+                  backFrogLeg3 = 19;
+                  backFrogLeg4 = 7;
+                  frontFrogLeg1 = 25;
+                  frontFrogLeg2 = 10;
+                  frontFrogLeg3 = 19;
+                  frontFrogLeg4 = 7;
+                  
                   frogEye1X = -10;
                   frogEye2X = 10;
                   frogEye1Y = 5;
@@ -190,10 +325,16 @@ frontFrogLeg4 = 19;
                   frogX = frogX - 50;
                   frogBody1 = 40;
                   frogBody2 = 20;
-                  backFrogLeg1 = 25;
-                  backFrogLeg2 = 10;
+                  
+                  backFrogLeg1 = 19;
+                  backFrogLeg2 = 7;
+                  backFrogLeg3 = 25;
+                  backFrogLeg4 =10;
                   frontFrogLeg1 = 19;
                   frontFrogLeg2 = 7;
+                  frontFrogLeg3 = 25;
+                  frontFrogLeg4 = 10;
+                  
                   frogEye1X = 10;
                   frogEye2X = -10;
                   frogEye1Y = 5;
@@ -203,6 +344,55 @@ frontFrogLeg4 = 19;
     }
 }
 
-void Car(){
+class Car {
+  int carX;
+  int carY;
+  int carSize;
+  int carSpeed;
+  
+  Car(int carX, int carY, int carSize, int carSpeed){
+    this.carX = carX;
+    this.carY = carY;
+    this.carSize = carSize;
+    this.carSpeed = carSpeed;
+  }
+  
+  void display() {
+      fill(0, 255, 0);
+      rect(carX , carY, carSize, 50);
+      carX = carX - carSpeed;
+      if (carX <= -100){
+        carX = 800;
+      }
+      else if (carX >= 800){
+        carX = 0;
+      }
+  }
+  
+  int getX(){
+    int CarX = carX;
+    return CarX;
+  }
+  
+  int getY(){
+    int CarY = carY;
+    return CarY;
+  }
+  
+  int getSize(){
+    int CarSize = carSize;
+    return CarSize;
+  }
   
 }
+
+boolean intersects(Car car) {
+      if ((frogY > car.getY() && frogY < car.getY()+50) && (frogX > car.getX() && frogX < car.getX()+car.getSize()))
+      {
+             return true;
+      }
+      else
+      {
+             return false;
+      }
+  }
