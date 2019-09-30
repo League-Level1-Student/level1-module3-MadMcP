@@ -37,6 +37,15 @@
   int feR = 250;
   int feB = 36;
   int feG = 13;
+  int caR = 245;
+  int caG = 173;
+  int caB = 17;
+  int bgR1 = 193;
+  int bgB1 = 192;
+  int bgG1 = 198;
+  
+  //String
+  String text = "";
   
   //Car
   Car carA = new Car(-100, 210, 100, -9);
@@ -52,6 +61,8 @@ void setup(){
 void draw(){
   // Street
   background(bgR, bgB, bgG);
+  fill (bgR1, bgB1, bgG1);
+  text(text, 350, 300);
     // S sidewalk
     fill(swR, swB, swG);
       // Ss Up
@@ -149,8 +160,7 @@ void draw(){
   carC.display();
   carD.display();
   
-  boolean carIntercepts1 = intersects(carA);
-  if (carIntercepts1 = false){
+  if (frogY <= 200){
     stroke(28, 56, 211);
     bgR = 28;
     bgB = 56;
@@ -170,11 +180,40 @@ void draw(){
     feR = 28;
     feB = 56;
     feG = 211;
-    fill (0, 0, 0);
-    text("Gameover", 300, 400);
+    caR = 28;
+    caG = 56;
+    caB = 211;
+    text = "You win!";
+  }
+  
+  boolean carIntercepts1 = intersects(carA);
+  if (carIntercepts1){
+    stroke(28, 56, 211);
+    bgR = 28;
+    bgB = 56;
+    bgG = 211;
+    swR = 28;
+    swB = 56;
+    swG = 211;
+    sR = 28;
+    sB = 56;
+    sG = 211;
+    cR = 28;
+    cB = 56;
+    cG = 211;
+    fR = 28;
+    fB = 56;
+    fG = 211;
+    feR = 28;
+    feB = 56;
+    feG = 211;
+    caR = 28;
+    caG = 56;
+    caB = 211;
+    text = "Gameover";
   }
   boolean carIntercepts2 = intersects(carB);
-  if (carIntercepts2 = false){
+  if (carIntercepts2){
     stroke(28, 56, 211);
     bgR = 28;
     bgB = 56;
@@ -194,11 +233,13 @@ void draw(){
     feR = 28;
     feB = 56;
     feG = 211;
-    fill (0, 0, 0);
-    text("Gameover", 300, 400);
+    caR = 28;
+    caG = 56;
+    caB = 211;
+    text = "Gameover";
   }
   boolean carIntercepts3 = intersects(carC);
-  if (carIntercepts3 = false){
+  if (carIntercepts3){
     stroke(28, 56, 211);
     bgR = 28;
     bgB = 56;
@@ -218,11 +259,13 @@ void draw(){
     feR = 28;
     feB = 56;
     feG = 211;
-    fill (0, 0, 0);
-    text("Gameover", 300, 400);
+    caR = 28;
+    caG = 56;
+    caB = 211;
+    text = "Gameover";
   }
   boolean carIntercepts4 = intersects(carD);
-  if (carIntercepts4 = false){
+  if (carIntercepts4){
     stroke(28, 56, 211);
     bgR = 28;
     bgB = 56;
@@ -242,8 +285,10 @@ void draw(){
     feR = 28;
     feB = 56;
     feG = 211;
-    fill (0, 0, 0);
-    text("Gameover", 300, 400);
+    caR = 28;
+    caG = 56;
+    caB = 211;
+    text = "Gameover";
   }
 }
 
@@ -358,8 +403,8 @@ class Car {
   }
   
   void display() {
-      fill(0, 255, 0);
-      rect(carX , carY, carSize, 50);
+      fill(caR, caG, caB);
+      rect(carX, carY, carSize, 50);
       carX = carX - carSpeed;
       if (carX <= -100){
         carX = 800;
